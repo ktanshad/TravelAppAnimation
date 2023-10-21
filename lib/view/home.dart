@@ -29,7 +29,7 @@ class Home extends StatelessWidget {
               child: Container(
                
                 decoration: BoxDecoration(
-                   color: Colors.black12,
+                   color: Colors.black26,
                   borderRadius: BorderRadius.circular(20)
                 ),
                 child: TripList()),
