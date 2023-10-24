@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:travelappanimation/models/Trip.dart';
-import 'package:travelappanimation/widgets/heart.dart';
+import 'package:travelappanimation/view/details_screen/widgets/heart.dart';
 
 class TripPackageDetails extends StatelessWidget {
 

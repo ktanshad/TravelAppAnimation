@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travelappanimation/widgets/screenTitle.dart';
-import 'package:travelappanimation/widgets/tripList.dart';
+import 'package:travelappanimation/view/home_screen/widgets/tripList.dart';
+import 'package:travelappanimation/view/home_screen/widgets/screenTitle.dart';
 
 
 class Home extends StatelessWidget {
@@ -24,15 +24,14 @@ class Home extends StatelessWidget {
               height: 160,
               child: ScreenTitle(text: 'Happy Vacations'),
             ),
-            Flexible(
-              child: Container(
-               
+            
+               Container(
+               height: 500,
                 decoration: BoxDecoration(
                    color: Colors.black26,
                   borderRadius: BorderRadius.circular(20)
                 ),
                 child: TripList()),
-            )
           ],
         )
       )
