@@ -8,7 +8,6 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: double.infinity,
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
           image: const DecorationImage(

@@ -10,12 +10,16 @@ class TripList extends StatefulWidget {
 
 class _TripListState extends State<TripList> {
   List _tripPackageTiles = [];
-  // final GlobalKey _listKey = GlobalKey();
+  final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
 
   @override
   void initState() {
     super.initState();
-    _addTripPackages();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _addTripPackages();
+     });
+    
   }
 
   void _addTripPackages() {
@@ -26,10 +30,19 @@ class _TripListState extends State<TripList> {
       TripModel(title: 'japan', price: '750', nights: '2', img: 'japan.jpg',details: 'Immerse yourself in the ancient and modern cultures of Japan. Learn the art of the tea ceremony, and stand before the famous Senso-ji Buddhist temple. Tour Matsumoto Castle, known as the “Crow Castle” for its black exterior. Taste legendary Hida beef and sip sake at a local brewery. Delve into Kyoto, the marvelous cultural capital of Japan. Board the Shinkansen “bullet” train to travel to Hiroshima to visit Shrine Island and the Peace Memorial Museum. Absorb the beauty of the Golden Pavilion and the majesty of Nijo Castle. Japan slowly draws you into its eclectic culture and charm, revealing incredible moments every step of the way.'),
       TripModel(title: 'kashmir', price: '600', nights: '4', img: 'kashmir.jpg',details: 'If you are planning a week’s trip to Kashmir, you might be confused about what to see and what to skip on the Heaven on Earth? Kashmir, being the most sought-after destination in the country and the world, it is all about natural beauty, ancient architecture, gorgeous stays and sumptuous cuisine.'),
     ];
+       
 
+       Future ft=Future((){});
     _trips.forEach((TripModel trip) {
-      _tripPackageTiles.add(_TripPackageTile(trip));
+      ft=ft.then((value){
+        return Future.delayed(const Duration(milliseconds: 100),(){
+          _tripPackageTiles.add(_TripPackageTile(trip));
+      _listKey.currentState!.insertItem(_tripPackageTiles.length-1);
+        });
+      });  
     });
+
+    
   }
 
   Widget _TripPackageTile(TripModel trip) {
@@ -67,14 +80,18 @@ class _TripListState extends State<TripList> {
     );
   }
 
+  Tween<Offset>_offset=Tween(begin: Offset(0,1),end: Offset(0,0));
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      // key: _listKey,
+    return AnimatedList(
+      key: _listKey,
 
-      itemCount: _tripPackageTiles.length,
-      itemBuilder: (context, index) {
-        return _tripPackageTiles[index];
+      initialItemCount: _tripPackageTiles.length,
+      itemBuilder: (context, index,animation) {
+        return SlideTransition(
+          child: _tripPackageTiles[index],
+          position:animation.drive(_offset));
       }
     );
   }
