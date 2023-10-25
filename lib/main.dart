@@ -1,11 +1,19 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:travelappanimation/controller/heartprovider.dart';
 import 'package:travelappanimation/view/mainandmenuscreen/mainandmenuscreen.dart';
 
 
-void main() {
-  runApp(MyApp());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(EasyLocalization(
+    supportedLocales: const[Locale('en','US'),Locale('ar','AE')],
+    path: 'assets/translation',
+    fallbackLocale: const Locale('en','US'),
+    child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -13,14 +21,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create:(context) => HeartProvider(), ),
-        ],
-        child: MaterialApp(
-          title: 'travelApp',
-          home:MainAndMenuScreen(),
-        ),
-      );
-  
+      providers: [
+        ChangeNotifierProvider(create:(context) => HeartProvider(), ),
+      ],
+      child: MaterialApp(
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        debugShowCheckedModeBanner: false,
+        title: 'travelApp',
+        home:MainAndMenuScreen(),
+      ),
+    );
   }
 }
