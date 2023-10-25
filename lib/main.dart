@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:travelappanimation/controller/heartprovider.dart';
+import 'package:travelappanimation/controller/tripprovider.dart';
 import 'package:travelappanimation/view/mainandmenuscreen/mainandmenuscreen.dart';
 
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create:(context) => HeartProvider(), ),
+         ChangeNotifierProvider(create:(context) => TripProvider(), ),
       ],
       child: MaterialApp(
         localizationsDelegates: context.localizationDelegates,
