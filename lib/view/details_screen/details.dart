@@ -24,7 +24,7 @@ class TripPackageDetails extends StatelessWidget {
               child: Hero(
                 tag:'tag${trip.img}' ,
                 child: Image.asset(
-                  'images/${trip.img}',
+                  'assets/images/${trip.img}',
                   height: 360,
                   fit: BoxFit.cover,
                   alignment: Alignment.topCenter,
@@ -33,7 +33,7 @@ class TripPackageDetails extends StatelessWidget {
             ),
             SizedBox(height: 30),
             ListTile(
-              title: Text(
+              title:Text(
                 '${trip.title}',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -43,13 +43,13 @@ class TripPackageDetails extends StatelessWidget {
               ),
               subtitle: Text(
                 '${trip.nights} night stay for only \$${trip.price}',
-                style: TextStyle(letterSpacing: 1)
+                style: const TextStyle(letterSpacing: 1)
               ),
               trailing: Heart()
             ),
             Padding(
-              padding: EdgeInsets.all(18),
-              child: Text(
+              padding: const EdgeInsets.all(18),
+              child:Text(
                 '${trip.details}',
                 style: TextStyle(
                   color: Colors.grey[600],

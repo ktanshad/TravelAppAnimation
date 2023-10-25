@@ -32,7 +32,8 @@ class TripPackageTile extends StatelessWidget {
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: Colors.white)),
-              Text('${trip.title}',
+              Text(
+                "${trip.title}",
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -43,7 +44,7 @@ class TripPackageTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
             child: Hero(
               tag: 'tag${trip.img}',
-              child: Image.asset('images/${trip.img}', height: 50.0),
+              child: Image.asset('assets/images/${trip.img}', height: 50.0),
             ),
           ),
           trailing: Text(

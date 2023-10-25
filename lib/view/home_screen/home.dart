@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelappanimation/view/home_screen/widgets/menuwidget.dart';
 import 'package:travelappanimation/view/home_screen/widgets/tripList.dart';
 import 'package:travelappanimation/view/home_screen/widgets/screenTitle.dart';
 
@@ -8,10 +9,10 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          image: const DecorationImage(
-            image: AssetImage("images/travelAppBackground image.png"), 
+        padding: const EdgeInsets.all(20),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/travelAppBackground image.png"), 
             fit: BoxFit.cover,
             alignment: Alignment.topLeft
           ),
@@ -19,7 +20,9 @@ class Home extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children:[
-            SizedBox(height: 30),
+              MenuWidget(),
+
+            const SizedBox(height: 30),
             SizedBox(
               height: 160,
               child: ScreenTitle(text: 'Happy Vacations'),
