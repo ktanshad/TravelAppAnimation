@@ -23,18 +23,18 @@ class TripPackageTile extends StatelessWidget {
                 MaterialPageRoute(
                     builder: (context) => TripPackageDetails(trip: trip)));
           },
-          contentPadding: EdgeInsets.all(25),
+          contentPadding: const EdgeInsets.all(25),
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text('${trip.nights} nights',
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: Colors.white)),
               Text(
                 "${trip.title}",
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.white)),
@@ -49,7 +49,7 @@ class TripPackageTile extends StatelessWidget {
           ),
           trailing: Text(
             '\$${trip.price}',
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
         ),
       ],

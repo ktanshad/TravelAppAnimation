@@ -1,9 +1,12 @@
+
 import 'package:flutter/material.dart';
 import 'package:travelappanimation/models/Trip.dart';
 import 'package:travelappanimation/services/tripservices.dart';
 import 'package:travelappanimation/view/home_screen/widgets/trip_packagetile.dart';
 
-class TripProvider with ChangeNotifier {
+class TripProvider extends ChangeNotifier {
+
+
   final GlobalKey<AnimatedListState> listKey = GlobalKey<AnimatedListState>();
   final TripServices _tripService = TripServices();
   List tripPackageTiles = [];
@@ -19,7 +22,11 @@ class TripProvider with ChangeNotifier {
         });
       });
     });
-    notifyListeners();
   }
+
+    changeLanguage(BuildContext context)async{
+      _tripService.changeLanguage(context);
+  }
+
 }
 

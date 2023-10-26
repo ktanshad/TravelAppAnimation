@@ -1,10 +1,16 @@
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
-import 'package:travelappanimation/widgets/localization_checker.dart';
 
-class MenuScreen extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:travelappanimation/controller/tripprovider.dart';
+
+class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
 
+  @override
+  State<MenuScreen> createState() => _MenuScreenState();
+}
+
+class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,15 +20,12 @@ class MenuScreen extends StatelessWidget {
         SizedBox(height: 50,),
          Padding(
            padding: const EdgeInsets.all(10.0),
-           child: Tooltip(
-            
-                    message: "change_language".tr(),
                     child:TextButton(onPressed: (){
-                       LocalizationChecker.changeLanguage(context);
+                       Provider.of<TripProvider>(context,listen: false).changeLanguage(context);
                     }, 
                     child: Text('English or Arabic',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                   ),)
-         ),
+
        ],
      ),
     );

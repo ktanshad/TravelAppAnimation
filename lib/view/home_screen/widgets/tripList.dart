@@ -25,15 +25,18 @@ class _TripListState extends State<TripList> {
 
   @override
   Widget build(BuildContext context) {
-     final tripProvider = Provider.of<TripProvider>(context);
-    return AnimatedList(
-        key:tripProvider.listKey,
-      initialItemCount: tripProvider.tripPackageTiles.length,
-        itemBuilder: (context, index, animation) {
-          return SlideTransition(
-                 child: tripProvider.tripPackageTiles[index],
-              position: animation.drive(_offset));
-        });
+    return Consumer<TripProvider>(
+      builder: (context, tripProvider, child) {
+       return   AnimatedList(
+          key:tripProvider.listKey,
+        initialItemCount: tripProvider.tripPackageTiles.length,
+          itemBuilder: (context, index, animation) {
+            return SlideTransition(
+                   child: tripProvider.tripPackageTiles[index],
+                position: animation.drive(_offset));
+          });
+      },
+    );
   }
 }
 

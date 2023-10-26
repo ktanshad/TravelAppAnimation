@@ -1,10 +1,16 @@
+
 import 'package:flutter/material.dart';
 import 'package:travelappanimation/view/home_screen/widgets/menuwidget.dart';
 import 'package:travelappanimation/view/home_screen/widgets/tripList.dart';
 import 'package:travelappanimation/view/home_screen/widgets/screenTitle.dart';
 
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

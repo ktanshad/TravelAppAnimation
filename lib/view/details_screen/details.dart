@@ -31,7 +31,7 @@ class TripPackageDetails extends StatelessWidget {
                 ),
               )
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             ListTile(
               title:Text(
                 '${trip.title}',
