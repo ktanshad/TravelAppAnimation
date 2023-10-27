@@ -33,7 +33,7 @@ class TripPackageTile extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Colors.white)),
               Text(
-                "${trip.title}",
+                trip.title,
                   style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

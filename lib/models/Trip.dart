@@ -1,9 +1,9 @@
 class TripModel {
-  final String? title;
-  final String? price;
-  final String? nights;
-  final String? img;
-  final String? details;
+  late String title;
+  late String price;
+  late String nights;
+  late String img;
+  late String details;
 
-  TripModel({this.title, this.price, this.nights, this.img,this.details});
+  TripModel({required this.title,required this.price,required this.nights,required this.img,required this.details});
 }
