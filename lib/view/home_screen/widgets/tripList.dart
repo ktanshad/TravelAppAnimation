@@ -35,7 +35,6 @@ class _TripListState extends State<TripList> {
   Widget build(BuildContext context) {
     return Consumer<LocaleProvider>(
       builder: (context, value, child) {
-           // Check for locale changes and fetch trips accordingly
         if (value.locale != LocaleProvider.previousLocale) {
           Provider.of<TripProvider>(context, listen: false).fetchTrips(context);
           LocaleProvider.previousLocale = value.locale;

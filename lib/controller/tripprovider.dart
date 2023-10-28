@@ -17,7 +17,6 @@ class TripProvider extends ChangeNotifier {
       await Future.delayed(const Duration(milliseconds: 100));
       tripPackageTiles.add(TripPackageTile(context: context, trip: trip));
       listKey.currentState!.insertItem(tripPackageTiles.length - 1);
-      notifyListeners();
     }
   }
 }

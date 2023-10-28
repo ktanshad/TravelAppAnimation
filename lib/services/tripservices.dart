@@ -3,9 +3,7 @@ import 'package:travelappanimation/models/Trip.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TripService {
-  // This function simulates fetching trips from an API or database.
   List<TripModel> fetchTrips(BuildContext context) {
-    // Replace this with your actual data-fetching logic.
     return [
       TripModel(
         title: AppLocalizations.of(context)!.munnartitle,

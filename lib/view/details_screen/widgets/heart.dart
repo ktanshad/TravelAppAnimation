@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:travelappanimation/controller/heartprovider.dart';
 
-class Heart extends StatefulWidget {
-  @override
-  _HeartState createState() => _HeartState();
-}
-
-class _HeartState extends State<Heart> {
+class Heart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<HeartProvider>(

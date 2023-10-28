@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:travelappanimation/controller/locale_provider.dart';
-import 'package:travelappanimation/controller/tripprovider.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
