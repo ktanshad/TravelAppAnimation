@@ -15,7 +15,7 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     backgroundColor:Colors.black,
+     backgroundColor:Colors.blueGrey,
        body:Consumer<LocaleProvider>(
         builder: (context, value, child) {
           return ListView(

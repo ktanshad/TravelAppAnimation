@@ -8,6 +8,7 @@ class MainAndMenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context)=>ZoomDrawer(
+    menuBackgroundColor:Colors.blueGrey,
     style: DrawerStyle.defaultStyle,
     menuScreen:MenuScreen(),
      mainScreen:Home()
